@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>FX Hub</title>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="./script.js" defer></script>
+        
+    </head>
+    <body>
+        <div></div>
+        <div class="container" id="session-c">
+            <div class="row" id="times">
+                <div class="clock">
+                    <p class="medium-text" id="new-york">0</p>
+                        <h3>New York</h3>
+                    </div>
+                    <div class="clock">
+                        <p class="medium-text" id="london">0</p>
+                        <h3>London</h3>
+                    </div>
+                    <div class="clock">
+                        <p class="medium-text" id="tokyo">0</p>
+                        <h3>Tokyo</h3>
+                    </div>
+                    <div class="clock">
+                        <p class="medium-text" id="sydney">0</p>
+                        <h3>Sydney</h3>
+                    </div>
+                    <p id="seconds">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="notes-c">
+            <div id="myDIV" class="header">
+                <h1>Watchlist</h1>
+                <input type="text" id="myInput" placeholder="EURUSD H4-- in Phase 2">
+                <span onclick="newElement()" class="addBtn">Add</span>
+              </div>
+              
+              <ul id="myUL">
+              </ul>
+        </div>
+        <div class="container" id="calculator-c"></div>
+        <div class="container" id="news-c">
+            <p id="high-impact">Next High Impact News: ____</p>
+        </div>
+        <div class="container" id="strength-c">
+            <h1>Strength Analysis</h1>
+            <div class="container" id="strength-input"></div>
+            <div class="container" id="strength-output"></div>
+        </div>
+        <div class="container" id="library-c">
+            <div class="row">
+                <div class="left-menu">
+                    <!-- <button>180 PC</button>
+                    <button>20 Bounce</button>
+                    <button>Power Pivot</button> -->
+                    <div class="left-menu-button" id="180-pc-button">180 PC</div>
+                    <div class="left-menu-button" id="20-bounce-button">20 Bounce</div>
+                    <div class="left-menu-button" id="power-pivot-button">Power Pivot</div>
+                </div>
+                <div class="recipe" id="20-Bounce">
+                    <h1>Recipe</h1>
+                </div>
+                <div class="recipe hide" id="180-PC">
+                    <h1>Recipe2</h1>
+                </div>
+            </div>
+        </div>
+        <div>
+            <iframe src="https://www.forexfactory.com/calendar"></iframe>
+        </div>
+        
+    </body>
+
+</html>
