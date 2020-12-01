@@ -3,7 +3,8 @@ let s1 = document.getElementById("180-pc-button");
 // Event listeners:
 s1.addEventListener("click", toggleRecipe);
 function toggleRecipe(){
-
+  /* Hide and un-hide recipe divs */
+  console.log("recipe selected");
 }
 
 // Create a "close" button and append it to each list item
@@ -38,15 +39,15 @@ list.addEventListener('click', function(ev) {
 // Create a new list item when clicking on the "Add" button
 function newElement() {
   var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
+  var inputValue = document.getElementById("notes-input").value;
   var t = document.createTextNode(inputValue);
   li.appendChild(t);
   if (inputValue === '') {
     console.log("attempted to add note with no input text.");
   } else {
-    document.getElementById("myUL").appendChild(li);
+    document.getElementById("notes-ul").appendChild(li);
   }
-  document.getElementById("myInput").value = "";
+  document.getElementById("notes-input").value = "";
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -74,7 +75,7 @@ function loadData(){
     let h = addZero(date.getHours());
     let m = addZero(date.getMinutes());
     let s = addZero(date.getSeconds());
-    newYorkTimeEl.innerHTML = ((h-5)%24)+':'+m;
+    newYorkTimeEl.innerHTML = ((h-5+24)%24)+':'+m;
     londonTimeEl.innerHTML = h+':'+m;
     tokyoTimeEl.innerHTML = ((h+9)%24)+':'+m;
     sydneyTimeEl.innerHTML = ((h+11)%24)+':'+m;
@@ -90,11 +91,12 @@ function loadData(){
         tokyoTimeEl.style.color = 'red';
     }
     if (((h+11)%24)<9 || ((h+11)%24)>17) {
-        syndeyTimeEl.style.color = 'red';
+        sydneyTimeEl.style.color = 'red';
     }
 
     /* Display seconds in bottom-right corner */
     let sec = document.getElementById("seconds");
+    console.log(sec);
     sec.innerHTML = s;
 }
 
