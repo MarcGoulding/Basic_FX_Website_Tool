@@ -35,6 +35,7 @@ button{
 }
 .medium-text{
     color:#ddd;
+    font-size: 25px;
 }
 #seconds{
     /* float:bottom; */
@@ -57,7 +58,8 @@ button{
     text-align:center;
 }
 #library-c {
-    margin:10%;
+    margin:5%;
+    float:left;
 }
 #high-impact{
     font-size: 28px;
@@ -69,9 +71,9 @@ button{
     color: white;
     float:right;
     
-  }
-#strength-analysis-title{
-  text-align:left;
+}
+#strength-c {
+  float:left;
   margin-left: 5%;
 }
 #news-c{
@@ -102,13 +104,12 @@ button{
     display:none;
 }
 .left-menu-button  {
-    /* background-color: #4CAF50; Green background */
     background-color: #70B3D4;
     background-image: linear-gradient(315deg, #1C1A7E 0%, #7BDAC6 100%);
 
-    border: 1px solid black; /* Green border */
+    border: 1px solid black;
     border-radius:25px;
-    color:black; /* White text */
+    color:black;
     font-weight: bold;
     font-size: 20px;
     padding: 10px 24px; /* Some padding */
@@ -158,7 +159,7 @@ button{
 
   }
   
-  /* When clicked on, add a background color and strike out text */
+  /* When clicked on, change style */
   ul li.checked {
     background-color: #70B3D4;
     background-image: linear-gradient(315deg, #7BDAC6 0%, #1C1A7E 150%);
@@ -176,8 +177,7 @@ button{
   }
   
   .close:hover {
-    background-color: #1C1A7E;
-    color: #ddd;
+    color: white;
   }
   
   /* Style the header */
@@ -208,7 +208,7 @@ button{
   /* Style the "Add" button */
   .addBtn {
     padding: 1%;
-    width: 30%;
+    width: 100%;
     
     background-color: #1C1A7E;
     background-image: linear-gradient(315deg, #1C1A7E 0%, #7BDAC6 100%);
@@ -227,3 +227,34 @@ button{
 
     color: white;
   }
+
+/* -------------------------------- */
+#strength-table {
+  border: 1px solid gray;
+  /*float:left;*/
+  /*margin:auto;*/
+}
+th, td {
+  padding: 8px;
+  cursor: pointer;
+}
+th {
+  color:#7BDAC6;
+}
+#strength-analysis-title{
+  text-align:left;
+  font-size:48px;
+  margin-bottom:2rem;
+}
+.empty-cell {
+  background-color: gray;
+}
+#strength-input {
+  float: left;
+  width: 50%;
+}
+#strength-output {
+  float:right;
+  text-align: left;
+  width: 50%;
+}
