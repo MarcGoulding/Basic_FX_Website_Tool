@@ -25,7 +25,7 @@ var close = document.getElementsByClassName("close");
 var i;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
-    var div = this.parentElement;
+    var div = cells.parentElement;
     div.style.display = "none";
   }
 }
@@ -59,7 +59,7 @@ function newElement() {
 
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
-      var div = this.parentElement;
+      var div = cells.parentElement;
       div.style.display = "none";
     }
   }
@@ -123,49 +123,40 @@ strength values for each currency pair.
 1 = long
 -1 = short
 0 = range
-2 = error
+-2 = error
 */
 strengths = {
-  EURUSD:2,
-  GBPUSD:2,
-  NZDUSD:2,
-  AUDUSD:2,
-  USDCAD:2,
-  USDCHF:2,
-  USDJPY:2,
-  EURGBP:2,
-  EURAUD:2,
-  EURCAD:2,
-  EURJPY:2,
-  EURNZD:2,
-  EURCHF:2,
-  GBPJPY:2,
-  GBPNZD:2,
-  GBPAUD:2,
-  GBPCHF:2,
-  GBPCAD:2,
-  AUDNZD:2,
-  AUDCAD:2,
-  AUDCHF:2,
-  AUDJPY:2,
-  NZDCAD:2,
-  NZDJPY:2,
-  NZDCHF:2,
-  CADJPY:2,
-  CADCHF:2,
-  CHFJPY:2
+  EURUSD:0,
+  GBPUSD:0,
+  NZDUSD:0,
+  AUDUSD:0,
+  USDCAD:0,
+  USDCHF:0,
+  USDJPY:0,
+  EURGBP:0,
+  EURAUD:0,
+  EURCAD:0,
+  EURJPY:0,
+  EURNZD:0,
+  EURCHF:0,
+  GBPJPY:0,
+  GBPNZD:0,
+  GBPAUD:0,
+  GBPCHF:0,
+  GBPCAD:0,
+  AUDNZD:0,
+  AUDCAD:0,
+  AUDCHF:0,
+  AUDJPY:0,
+  NZDCAD:0,
+  NZDJPY:0,
+  NZDCHF:0,
+  CADJPY:0,
+  CADCHF:0,
+  CHFJPY:0
 };
 
 function generateStrengthOutput() {
-  currencyEls.eur.innerText = "err";
-  currencyEls.usd.innerText = "err";
-  currencyEls.chf.innerText = "err";
-  currencyEls.gbp.innerText = "err";
-  currencyEls.cad.innerText = "err";
-  currencyEls.aud.innerText = "err";
-  currencyEls.nzd.innerText = "err";
-  currencyEls.jpy.innerText = "err";
-
   /* Check all pairs for each currency */
   /* USD */
   strength = 0;
@@ -305,12 +296,13 @@ function generateStrengthOutput() {
   currencyEls.chf.innerText = strength;
 }
 
-
-/* execute generateStrengthOutput when table is pressed */
-strengthTableEl = document.getElementById("strength-table");
-strengthTableEl.addEventListener("click", () => {
-  generateStrengthOutput();
-});
+function changeStrength(value){
+  value++;
+  if (value > 1){
+    value = -1;
+  }
+  return value;
+}
 
 /* Set strength value for each pair after clicking a cell in the table */
 cells = {
@@ -343,3 +335,480 @@ cells = {
   CADCHF: document.getElementById("CADCHF"),
   CHFJPY: document.getElementById("CHFJPY")
 };
+
+cells.EURUSD.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.EURUSD = changeStrength(strengths.EURUSD);
+  /* Change styling to new value */
+  switch(strengths.EURUSD){
+    case 1:
+      cells.EURUSD.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.EURUSD.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.EURUSD.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.GBPUSD.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.GBPUSD = changeStrength(strengths.GBPUSD);
+  /* Change styling to new value */
+  switch(strengths.GBPUSD){
+    case 1:
+      cells.GBPUSD.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.GBPUSD.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.GBPUSD.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.NZDUSD.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.NZDUSD = changeStrength(strengths.NZDUSD);
+  /* Change styling to new value */
+  switch(strengths.NZDUSD){
+    case 1:
+      cells.NZDUSD.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.NZDUSD.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.NZDUSD.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.AUDUSD.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.AUDUSD = changeStrength(strengths.AUDUSD);
+  /* Change styling to new value */
+  switch(strengths.AUDUSD){
+    case 1:
+      cells.AUDUSD.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.AUDUSD.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.AUDUSD.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.USDCAD.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.USDCAD = changeStrength(strengths.USDCAD);
+  /* Change styling to new value */
+  switch(strengths.USDCAD){
+    case 1:
+      cells.USDCAD.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.USDCAD.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.USDCAD.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.USDCHF.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.USDCHF = changeStrength(strengths.USDCHF);
+  /* Change styling to new value */
+  switch(strengths.USDCHF){
+    case 1:
+      cells.USDCHF.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.USDCHF.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.USDCHF.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.USDJPY.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.USDJPY = changeStrength(strengths.USDJPY);
+  /* Change styling to new value */
+  switch(strengths.USDJPY){
+    case 1:
+      cells.USDJPY.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.USDJPY.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.USDJPY.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.EURGBP.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.EURGBP = changeStrength(strengths.EURGBP);
+  /* Change styling to new value */
+  switch(strengths.EURGBP){
+    case 1:
+      cells.EURGBP.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.EURGBP.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.EURGBP.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.EURAUD.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.EURAUD = changeStrength(strengths.EURAUD);
+  /* Change styling to new value */
+  switch(strengths.EURAUD){
+    case 1:
+      cells.EURAUD.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.EURAUD.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.EURAUD.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.EURCAD.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.EURCAD = changeStrength(strengths.EURCAD);
+  /* Change styling to new value */
+  switch(strengths.EURCAD){
+    case 1:
+      cells.EURCAD.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.EURCAD.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.EURCAD.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.EURJPY.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.EURJPY = changeStrength(strengths.EURJPY);
+  /* Change styling to new value */
+  switch(strengths.EURJPY){
+    case 1:
+      cells.EURJPY.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.EURJPY.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.EURJPY.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.EURNZD.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.EURNZD = changeStrength(strengths.EURNZD);
+  /* Change styling to new value */
+  switch(strengths.EURNZD){
+    case 1:
+      cells.EURNZD.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.EURNZD.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.EURNZD.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.EURCHF.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.EURCHF = changeStrength(strengths.EURCHF);
+  /* Change styling to new value */
+  switch(strengths.EURCHF){
+    case 1:
+      cells.EURCHF.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.EURCHF.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.EURCHF.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.GBPJPY.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.GBPJPY = changeStrength(strengths.GBPJPY);
+  /* Change styling to new value */
+  switch(strengths.GBPJPY){
+    case 1:
+      cells.GBPJPY.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.GBPJPY.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.GBPJPY.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.GBPNZD.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.GBPNZD = changeStrength(strengths.GBPNZD);
+  /* Change styling to new value */
+  switch(strengths.GBPNZD){
+    case 1:
+      cells.GBPNZD.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.GBPNZD.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.GBPNZD.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.GBPAUD.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.GBPAUD = changeStrength(strengths.GBPAUD);
+  /* Change styling to new value */
+  switch(strengths.GBPAUD){
+    case 1:
+      cells.GBPAUD.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.GBPAUD.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.GBPAUD.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.GBPCHF.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.GBPCHF = changeStrength(strengths.GBPCHF);
+  /* Change styling to new value */
+  switch(strengths.GBPCHF){
+    case 1:
+      cells.GBPCHF.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.GBPCHF.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.GBPCHF.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.GBPCAD.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.GBPCAD = changeStrength(strengths.GBPCAD);
+  /* Change styling to new value */
+  switch(strengths.GBPCAD){
+    case 1:
+      cells.GBPCAD.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.GBPCAD.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.GBPCAD.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.AUDNZD.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.AUDNZD = changeStrength(strengths.AUDNZD);
+  /* Change styling to new value */
+  switch(strengths.AUDNZD){
+    case 1:
+      cells.AUDNZD.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.AUDNZD.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.AUDNZD.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.AUDCAD.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.AUDCAD = changeStrength(strengths.AUDCAD);
+  /* Change styling to new value */
+  switch(strengths.AUDCAD){
+    case 1:
+      cells.AUDCAD.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.AUDCAD.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.AUDCAD.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.AUDCHF.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.AUDCHF = changeStrength(strengths.AUDCHF);
+  /* Change styling to new value */
+  switch(strengths.AUDCHF){
+    case 1:
+      cells.AUDCHF.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.AUDCHF.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.AUDCHF.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.AUDJPY.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.AUDJPY = changeStrength(strengths.AUDJPY);
+  /* Change styling to new value */
+  switch(strengths.AUDJPY){
+    case 1:
+      cells.AUDJPY.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.AUDJPY.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.AUDJPY.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.NZDCAD.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.NZDCAD = changeStrength(strengths.NZDCAD);
+  /* Change styling to new value */
+  switch(strengths.NZDCAD){
+    case 1:
+      cells.NZDCAD.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.NZDCAD.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.NZDCAD.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.NZDJPY.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.NZDJPY = changeStrength(strengths.NZDJPY);
+  /* Change styling to new value */
+  switch(strengths.NZDJPY){
+    case 1:
+      cells.NZDJPY.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.NZDJPY.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.NZDJPY.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.NZDCHF.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.NZDCHF = changeStrength(strengths.NZDCHF);
+  /* Change styling to new value */
+  switch(strengths.NZDCHF){
+    case 1:
+      cells.NZDCHF.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.NZDCHF.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.NZDCHF.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.CADJPY.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.CADJPY = changeStrength(strengths.CADJPY);
+  /* Change styling to new value */
+  switch(strengths.CADJPY){
+    case 1:
+      cells.CADJPY.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.CADJPY.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.CADJPY.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.CADCHF.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.CADCHF = changeStrength(strengths.CADCHF);
+  /* Change styling to new value */
+  switch(strengths.CADCHF){
+    case 1:
+      cells.CADCHF.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.CADCHF.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.CADCHF.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
+cells.CHFJPY.addEventListener("click", () => {
+  /* Rotate strength value */
+  strengths.CHFJPY = changeStrength(strengths.CHFJPY);
+  /* Change styling to new value */
+  switch(strengths.CHFJPY){
+    case 1:
+      cells.CHFJPY.style.backgroundColor = "green";
+      break;
+    case -1:
+      cells.CHFJPY.style.backgroundColor = "red";
+      break;
+    case 0:
+      cells.CHFJPY.style.backgroundColor = "yellow";
+      break;
+  }
+  generateStrengthOutput();
+});
