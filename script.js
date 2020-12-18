@@ -1,11 +1,37 @@
-/* Initialise */
-let s1 = document.getElementById("180-pc-button");
-/* Event listeners */
-s1.addEventListener("click", toggleRecipe);
-function toggleRecipe(){
-  /* Hide and un-hide recipe divs */
-  console.log("recipe selected");
-}
+let b1 = document.getElementById("180-pc-button");
+let b2 = document.getElementById("20-bounce-button");
+let b3 = document.getElementById("power-pivot-button");
+let b4 = document.getElementById("ema-crossover-button");
+let r1 = document.getElementById("180-pc-recipe");
+let r2 = document.getElementById("20-bounce-recipe");
+let r3 = document.getElementById("power-pivot-recipe");
+let r4 = document.getElementById("ema-crossover-recipe");
+let recipes = document.querySelectorAll(".recipe");
+b1.addEventListener("click", () => {
+  recipes.forEach((recipe) => {
+    recipe.style.display = "none";
+  });
+  r1.style.display = "block";
+});
+b2.addEventListener("click", () => {
+  recipes.forEach((recipe) => {
+    recipe.style.display = "none";
+  });
+  r2.style.display = "block";
+});
+b3.addEventListener("click", () => {
+  recipes.forEach((recipe) => {
+    recipe.style.display = "none";
+  });
+  r3.style.display = "block";
+});
+b4.addEventListener("click", () => {
+  recipes.forEach((recipe) => {
+    recipe.style.display = "none";
+  });
+  r4.style.display = "block";
+});
+
 
 /* ------------------------------------------------------------------------- */
 
@@ -25,7 +51,7 @@ var close = document.getElementsByClassName("close");
 var i;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
-    var div = cells.parentElement;
+    var div = this.parentElement;
     div.style.display = "none";
   }
 }
@@ -59,7 +85,7 @@ function newElement() {
 
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
-      var div = cells.parentElement;
+      var div = this.parentElement;
       div.style.display = "none";
     }
   }
@@ -192,6 +218,13 @@ function generateStrengthOutput() {
   strength = strengths.EURNZD==+1? strength+1 : strength;
   strength = strengths.EURNZD==-1? strength-1 : strength;
   currencyEls.eur.innerText = strength;
+  if (strength >= 4) {
+    currencyEls.eur.style.color = "green";
+  } else if(strength <= -4) {
+    currencyEls.eur.style.color = "red";
+  } else {
+    currencyEls.eur.style.color = "gray";
+  }
   /* GBP */
   strength = 0;
   strength = strengths.GBPUSD==+1? strength+1 : strength;
@@ -209,6 +242,13 @@ function generateStrengthOutput() {
   strength = strengths.GBPNZD==+1? strength+1 : strength;
   strength = strengths.GBPNZD==-1? strength-1 : strength;
   currencyEls.gbp.innerText = strength;
+  if (strength >= 4) {
+    currencyEls.gbp.style.color = "green";
+  } else if(strength <= -4) {
+    currencyEls.gbp.style.color = "red";
+  } else {
+    currencyEls.gbp.style.color = "gray";
+  }
   /* AUD */
   strength = 0;
   strength = strengths.AUDUSD==+1? strength+1 : strength;
@@ -226,6 +266,13 @@ function generateStrengthOutput() {
   strength = strengths.AUDNZD==+1? strength+1 : strength;
   strength = strengths.AUDNZD==-1? strength-1 : strength;
   currencyEls.aud.innerText = strength;
+  if (strength >= 4) {
+    currencyEls.aud.style.color = "green";
+  } else if(strength <= -4) {
+    currencyEls.aud.style.color = "red";
+  } else {
+    currencyEls.aud.style.color = "gray";
+  }
   /* CAD */
   strength = 0;
   strength = strengths.USDCAD==-1? strength+1 : strength;
@@ -243,6 +290,13 @@ function generateStrengthOutput() {
   strength = strengths.NZDCAD==-1? strength+1 : strength;
   strength = strengths.NZDCAD==+1? strength-1 : strength;
   currencyEls.cad.innerText = strength;
+  if (strength >= 4) {
+    currencyEls.cad.style.color = "green";
+  } else if(strength <= -4) {
+    currencyEls.cad.style.color = "red";
+  } else {
+    currencyEls.cad.style.color = "gray";
+  }
   /* NZD */
   strength = 0;
   strength = strengths.NZDUSD==+1? strength+1 : strength;
@@ -260,6 +314,13 @@ function generateStrengthOutput() {
   strength = strengths.EURNZD==-1? strength+1 : strength;
   strength = strengths.EURNZD==+1? strength-1 : strength;
   currencyEls.nzd.innerText = strength;
+  if (strength >= 4) {
+    currencyEls.nzd.style.color = "green";
+  } else if(strength <= -4) {
+    currencyEls.nzd.style.color = "red";
+  } else {
+    currencyEls.nzd.style.color = "gray";
+  }
   /* JPY */
   strength = 0;
   strength = strengths.USDJPY==-1? strength+1 : strength;
@@ -277,6 +338,13 @@ function generateStrengthOutput() {
   strength = strengths.EURJPY==-1? strength+1 : strength;
   strength = strengths.EURJPY==+1? strength-1 : strength;
   currencyEls.jpy.innerText = strength;
+  if (strength >= 4) {
+    currencyEls.jpy.style.color = "green";
+  } else if(strength <= -4) {
+    currencyEls.jpy.style.color = "red";
+  } else {
+    currencyEls.jpy.style.color = "gray";
+  }
   /* CHF */
   strength = 0;
   strength = strengths.USDCHF==-1? strength+1 : strength;
@@ -287,13 +355,20 @@ function generateStrengthOutput() {
   strength = strengths.AUDCHF==+1? strength-1 : strength;
   strength = strengths.CADCHF==-1? strength+1 : strength;
   strength = strengths.CADCHF==+1? strength-1 : strength;
-  strength = strengths.NZDCHF==+1? strength+1 : strength;
-  strength = strengths.NZDCHF==-1? strength-1 : strength;
+  strength = strengths.NZDCHF==-1? strength+1 : strength;
+  strength = strengths.NZDCHF==+1? strength-1 : strength;
   strength = strengths.CHFJPY==+1? strength+1 : strength;
   strength = strengths.CHFJPY==-1? strength-1 : strength;
   strength = strengths.EURCHF==-1? strength+1 : strength;
   strength = strengths.EURCHF==+1? strength-1 : strength;
   currencyEls.chf.innerText = strength;
+  if (strength >= 4) {
+    currencyEls.chf.style.color = "green";
+  } else if(strength <= -4) {
+    currencyEls.chf.style.color = "red";
+  } else {
+    currencyEls.chf.style.color = "gray";
+  }
 }
 
 function changeStrength(value){
@@ -812,3 +887,5 @@ cells.CHFJPY.addEventListener("click", () => {
   }
   generateStrengthOutput();
 });
+
+/* ------------------------------------------------------------------------- */

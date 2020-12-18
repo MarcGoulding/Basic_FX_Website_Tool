@@ -3,12 +3,13 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    color:gray;
 }
 body {
     background-color: #000202;
 }
 a:link {
-  color:white;
+  color:gray;
   text-decoration: none;
 }
 
@@ -21,20 +22,21 @@ a:hover {
 }
 
 a:active {
-  color: white;
+  color: gray;
   text-decoration: none;
 }
-button{
-    width:50;
-    height:50;
-    font-size:50;
-    margin:2;
-    background-color: #7BDAC6;
-    color: #ddd;
-    cursor: pointer;
+li {
+  padding: 12px 8px 12px 40px;
+  font-size: 25px;
+  margin-bottom:5px;
+  color:#FAEBD7;
+  list-style: none;
+  cursor: pointer;
+
 }
 .medium-text{
-    color:#ddd;
+    /*color:#ddd;*/
+    color:gray;
     font-size: 25px;
 }
 #seconds{
@@ -68,7 +70,7 @@ button{
     padding-bottom:30px;
     background-color: #1C1A7E;
     background-image: linear-gradient(315deg, #1C1A7E 0%, #000202 100%);
-    color: white;
+    color: antiqueWhite;
     float:right;
     
 }
@@ -88,7 +90,6 @@ button{
     padding-top:30px;
     padding-bottom: 15px;
     font-size:35px;
-    color:#7BDAC6;
 }
 #left-menu{
     flex:35%;
@@ -99,9 +100,7 @@ button{
     flex:65%;
     padding-left: 5%;
     text-align: left;
-}
-.recipe.hide {
-    display:none;
+    display: none;
 }
 .left-menu-button  {
     background-color: #70B3D4;
@@ -123,110 +122,109 @@ button{
 
 /*---------------------------*/
   
-  /* Remove margins and padding from the list */
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Style the list items */
-  ul li {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    font-size: 25px;
-    border-radius:25px;
-    margin-bottom:5px;
-  
-    /* make the list items unselectable */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  /* Set all odd list items to a different color (zebra-stripes) */
-  ul li:nth-child(odd) {
-    /* background: #f9f9f9; */
-    color: #70B3D4;
-  }
-  
-  /* Darker background-color on hover */
-  ul li:hover {
-    background: #1C1A7E;
-    background-color: #70B3D4;
-    background-image: linear-gradient(315deg, #70B3D4 0%, #1C1A7E 100%);
+/* Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
+}
 
-  }
-  
-  /* When clicked on, change style */
-  ul li.checked {
-    background-color: #70B3D4;
-    background-image: linear-gradient(315deg, #7BDAC6 0%, #1C1A7E 150%);
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  font-size: 25px;
+  border-radius:25px;
+  margin-bottom:5px;
+  color:#FAEBD7;
 
-    color: #ddd;
-  }
-  
-  /* Style the close button */
-  .close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px 16px 12px 16px;
-    border-radius:40%;
-  }
-  
-  .close:hover {
-    color: white;
-  }
-  
-  /* Style the header */
-  .header {
-    padding: 30px 40px;
-    color: #ddd;
-    text-align: center;
-  }
-  
-  /* Clear floats after the header */
-  .header:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Style the input */
-  input {
-    border: none;
-    border-radius: 25px;
-    width: 100%;
-    padding: 10px;
-    padding-left:15px;
-    font-size: 24px;
-    margin-bottom:5px;
-  }
-  
-  /* Style the "Add" button */
-  .addBtn {
-    padding: 1%;
-    width: 100%;
-    
-    background-color: #1C1A7E;
-    background-image: linear-gradient(315deg, #1C1A7E 0%, #7BDAC6 100%);
-    color:#000202;
-    float: left;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.2s;
-    border-radius:25px;
-  }
-  
-  .addBtn:hover {
-    background-color: #1C1A7E;
-    background-image: linear-gradient(315deg, #1C1A7E 0%, #000202 100%);
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-    color: white;
-  }
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  color: #70B3D4;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #1C1A7E;
+  background-color: #70B3D4;
+  background-image: linear-gradient(315deg, #70B3D4 0%, #1C1A7E 100%);
+}
+
+/* When clicked on, change style */
+ul li.checked {
+  background-color: #70B3D4;
+  background-image: linear-gradient(315deg, #7BDAC6 0%, #1C1A7E 150%);
+  color: #ddd;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+  border-radius:40%;
+}
+
+.close:hover {
+  color: antiqueWhite;
+}
+
+/* Style the header */
+.header {
+  padding: 30px 40px;
+  color: #ddd;
+  text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+input {
+  border: none;
+  border-radius: 25px;
+  width: 100%;
+  padding: 10px;
+  padding-left:15px;
+  font-size: 24px;
+  margin-bottom:5px;
+  background-color:gainsboro;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 1%;
+  width: 100%;
+  
+  background-color: #1C1A7E;
+  background-image: linear-gradient(315deg, #1C1A7E 0%, #7BDAC6 100%);
+  color:#000202;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius:25px;
+}
+
+.addBtn:hover {
+  background-color: #1C1A7E;
+  background-image: linear-gradient(315deg, #1C1A7E 0%, #000202 100%);
+
+  color: antiqueWhite;
+}
 
 /* -------------------------------- */
 #strength-table {
@@ -247,6 +245,9 @@ th {
   margin-bottom:2rem;
 }
 .empty-cell {
+  background-color: black;
+}
+.non-empty-cell {
   background-color: gray;
 }
 #strength-input {
