@@ -34,6 +34,16 @@ b4.addEventListener("click", () => {
 
 
 /* ------------------------------------------------------------------------- */
+/* Create events to change tabs between FX and CRIPTO */
+let fx_tab = document.querySelector("FX-tab");
+let cripto_tab = document.querySelector("CRIPTO-tab");
+let fx_tab_button = document.querySelector("FX-tab-button");
+let cripto_tab_button = document.querySelector("CRIPTO-tab-button");
+// fx_tab_button.addEventListener("click", () => {
+//   console.log('clicked');
+// });
+
+/* ------------------------------------------------------------------------- */
 
 /* Create a "close" button and append it to each list item */
 var myNodelist = document.getElementsByTagName("LI");
@@ -58,7 +68,7 @@ for (i = 0; i < close.length; i++) {
 
 /* Add a "checked" symbol when clicking on a list item */
 var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
+list.addEventListener("click", function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
   }

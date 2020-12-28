@@ -1,230 +1,232 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport"
-              content="width=device-width, initial-scale=1">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport"
+            content="width=device-width, initial-scale=1">
 
-        <title>FX Hub</title>
-        <link rel="stylesheet" href="style.css"/>
-        <script src="./script.js" defer></script>
-        
-    </head>
-    <body>
-        <div class="container" id="session-c">
-            <div class="row" id="times">
-                <div class="clock">
-                    <p class="medium-text" id="new-york">0</p>
-                        <h3>New York</h3>
-                    </div>
-                    <div class="clock">
-                        <p class="medium-text" id="london">0</p>
-                        <h3>London</h3>
-                    </div>
-                    <div class="clock">
-                        <p class="medium-text" id="tokyo">0</p>
-                        <h3>Tokyo</h3>
-                    </div>
-                    <div class="clock">
-                        <p class="medium-text" id="sydney">0</p>
-                        <h3>Sydney</h3>
-                    </div>
-                    <p id="seconds">0</p>
-                </div>
+      <title>FX Hub</title>
+      <link rel="stylesheet" href="style.css"/>
+      <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="FX-tab">
+      <div class="tab-button" id="FX-tab-button">FX</div>
+      <div class="container" id="session-c">
+        <div class="row" id="times">
+          <div class="clock">
+            <p class="medium-text" id="new-york">0</p>
+              <h3>New York</h3>
             </div>
-        </div>
-        <div class="container" id="calculator-c">
-            <h1>CALCULATOR DIV</h1>
-        </div>
-        <div class="container" id="news-c">
-            <a href="https://www.forexfactory.com/calendar" target="_blank" id="high-impact">Next High Impact News</a>
-        </div>
-        <div class="container" id="notes-c">
-            <div id="myDIV" class="header">
-                <h1>Watchlist</h1>
-                <input type="text" id="notes-input" placeholder="EURUSD H4-- in Phase 2">
-                <span onclick="newElement()" class="addBtn">Add</span>
-              </div>
-              
-              <ul id="notes-ul">
-              </ul>
-        </div>        
-        <div class="container" id="strength-c">
-            <h1 id="strength-analysis-title">Strength Analysis</h1>
-            <div class="container" id="strength-input">
-                <!-- 8x8 table of pairs -->
-                <table id="strength-table">
-                    <tr>
-                        <th>-</th>
-                        <th>EUR</th>
-                        <th>USD</th>
-                        <th>CHF</th>
-                        <th>GBP</th>
-                        <th>CAD</th>
-                        <th>AUD</th>
-                        <th>NZD</th>
-                        <th>JPY</th>
-                    </tr>
-                    <tr>
-                        <th>EUR</th>
-                        <td class="empty-cell"></td>
-                        <td id="EURUSD" class="non-empty-cell"></td>
-                        <td id="EURCHF" class="non-empty-cell"></td>
-                        <td id="EURGBP" class="non-empty-cell"></td>
-                        <td id="EURCAD" class="non-empty-cell"></td>
-                        <td id="EURAUD" class="non-empty-cell"></td>
-                        <td id="EURNZD" class="non-empty-cell"></td>
-                        <td id="EURJPY" class="non-empty-cell"></td>
-                    </tr>
-                    <tr>
-                        <th>USD</th>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td id="USDCHF" class="non-empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td id="USDCAD" class="non-empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td id="USDJPY" class="non-empty-cell"></td>
-                    </tr>
-                    <tr>
-                        <th>CHF</th>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td id="CHFJPY" class="non-empty-cell"></td>
-                    </tr>
-                    <tr>
-                        <th>GBP</th>
-                        <td class="empty-cell"></td>
-                        <td id="GBPUSD" class="non-empty-cell"></td>
-                        <td id="GBPCHF" class="non-empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td id="GBPCAD" class="non-empty-cell"></td>
-                        <td id="GBPAUD" class="non-empty-cell"></td>
-                        <td id="GBPNZD" class="non-empty-cell"></td>
-                        <td id="GBPJPY" class="non-empty-cell"></td>
-                    </tr>
-                    <tr>
-                        <th>CAD</th>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td id="CADCHF" class="non-empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td id="CADJPY" class="non-empty-cell"></td>
-                    </tr>
-                    <tr>
-                        <th>AUD</th>
-                        <td class="empty-cell"></td>
-                        <td id="AUDUSD" class="non-empty-cell"></td>
-                        <td id="AUDCHF" class="non-empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td id="AUDCAD" class="non-empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td id="AUDNZD" class="non-empty-cell"></td>
-                        <td id="AUDJPY" class="non-empty-cell"></td>
-                    </tr>
-                    <tr>
-                        <th>NZD</th>
-                        <td class="empty-cell"></td>
-                        <td id="NZDUSD" class="non-empty-cell"></td>
-                        <td id="NZDCHF" class="non-empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td id="NZDCAD" class="non-empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td id="NZDJPY" class="non-empty-cell"></td>
-                    </tr>
-                    <tr>
-                        <th>JPY</th>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                        <td class="empty-cell"></td>
-                    </tr>
-                </table>
+            <div class="clock">
+              <p class="medium-text" id="london">0</p>
+              <h3>London</h3>
             </div>
-            <div class="container" id="strength-output">
-                <table>
-                    <tr>
-                        <td class="medium-text">EUR :</td>
-                        <td class="medium-text" id="eur-txt">0</td>
-                    </tr>
-                    <tr>
-                        <td class="medium-text">USD :</td>
-                        <td class="medium-text" id="usd-txt">0</td>
-                    </tr>
-                    <tr>
-                        <td class="medium-text">CHF :</td>
-                        <td class="medium-text" id="chf-txt">0</td>
-                    </tr>
-                    <tr>
-                        <td class="medium-text">GBP :</td>
-                        <td class="medium-text" id="gbp-txt">0</td>
-                    </tr>
-                    <tr>
-                        <td class="medium-text">CAD :</td>
-                        <td class="medium-text" id="cad-txt">0</td>
-                    </tr>
-                    <tr>
-                        <td class="medium-text">AUD :</td>
-                        <td class="medium-text" id="aud-txt">0</td>
-                    </tr>
-                    <tr>
-                        <td class="medium-text">NZD :</td>
-                        <td class="medium-text" id="nzd-txt">0</td>
-                    </tr>
-                    <tr>
-                        <td class="medium-text">JPY :</td>
-                        <td class="medium-text" id="jpy-txt">0</td>
-                    </tr>
-                </table>
+            <div class="clock">
+              <p class="medium-text" id="tokyo">0</p>
+              <h3>Tokyo</h3>
             </div>
-        </div>
-        <div class="container" id="library-c">
-            <div class="row">
-                <div class="left-menu">
-                    <div class="left-menu-button" id="180-pc-button">180 PC</div>
-                    <div class="left-menu-button" id="20-bounce-button">20 Bounce</div>
-                    <div class="left-menu-button" id="power-pivot-button">Power Pivot</div>
-                    <div class="left-menu-button" id="ema-crossover-button">Ema Crossover</div>
-                </div>
-                <div class="recipe" id="180-pc-recipe">
-                    <h1 class="recipe-title">180 PHASE CHANGER</h1>
-                    <li>D1 / H4 timeframe</li>
-                    <li>2 cycles</li>
-                    <li>8-20 EMA in order</li>
-                    <li>current bar crosses 8 EMA</li>
-                    <li>ringed-high/ringed-low formation</li>
-                    <li>Entry: High/Low of current bar</li>
-                    <li>SL: High/Low of current bar plus spread</li>
-                    <li>TP: 1:1 ratio</li>
-                </div>
-                <div class="recipe" id="20-bounce-recipe">
-                </div>
-                <div class="recipe" id="power-pivot-recipe">
-                </div>
-                <div class="recipe" id="ema-crossover-recipe">
-                    <h1 class="recipe-title">EMA CROSSOVER</h1>
-                    <li>D1: 2 green candles</li>
-                    <li>D1: 2 cycles</li>
-                    <li>D1: Phase 1</li>
-                    <li>H1: 8-20 EMA crossover</li>
-                </div>
+            <div class="clock">
+              <p class="medium-text" id="sydney">0</p>
+              <h3>Sydney</h3>
             </div>
+            <p id="seconds">0</p>
+          </div>
         </div>
-        
-    </body>
-
+      </div>
+      <div class="container" id="calculator-c">
+        <h1>(( CALCULATOR DIV ))</h1>
+      </div>
+      <div class="container" id="news-c">
+        <a href="https://www.forexfactory.com/calendar" target="_blank" id="high-impact">Next High Impact News</a>
+      </div>
+      <div class="container" id="notes-c">
+        <div id="myDIV" class="header">
+          <h1>Watchlist</h1>
+          <input type="text" id="notes-input" placeholder="EURUSD H4-- in Phase 2">
+          <span onclick="newElement()" class="addBtn">Add</span>
+        </div>
+        <ul id="notes-ul">
+        </ul>
+      </div>        
+      <div class="container" id="strength-c">
+        <h1 id="strength-analysis-title">Strength Analysis</h1>
+        <div class="container" id="strength-input">
+            <!-- 8x8 table of pairs -->
+            <table id="strength-table">
+                <tr>
+                    <th>-</th>
+                    <th>EUR</th>
+                    <th>USD</th>
+                    <th>CHF</th>
+                    <th>GBP</th>
+                    <th>CAD</th>
+                    <th>AUD</th>
+                    <th>NZD</th>
+                    <th>JPY</th>
+                </tr>
+                <tr>
+                    <th>EUR</th>
+                    <td class="empty-cell"></td>
+                    <td id="EURUSD" class="non-empty-cell"></td>
+                    <td id="EURCHF" class="non-empty-cell"></td>
+                    <td id="EURGBP" class="non-empty-cell"></td>
+                    <td id="EURCAD" class="non-empty-cell"></td>
+                    <td id="EURAUD" class="non-empty-cell"></td>
+                    <td id="EURNZD" class="non-empty-cell"></td>
+                    <td id="EURJPY" class="non-empty-cell"></td>
+                </tr>
+                <tr>
+                    <th>USD</th>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td id="USDCHF" class="non-empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td id="USDCAD" class="non-empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td id="USDJPY" class="non-empty-cell"></td>
+                </tr>
+                <tr>
+                    <th>CHF</th>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td id="CHFJPY" class="non-empty-cell"></td>
+                </tr>
+                <tr>
+                    <th>GBP</th>
+                    <td class="empty-cell"></td>
+                    <td id="GBPUSD" class="non-empty-cell"></td>
+                    <td id="GBPCHF" class="non-empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td id="GBPCAD" class="non-empty-cell"></td>
+                    <td id="GBPAUD" class="non-empty-cell"></td>
+                    <td id="GBPNZD" class="non-empty-cell"></td>
+                    <td id="GBPJPY" class="non-empty-cell"></td>
+                </tr>
+                <tr>
+                    <th>CAD</th>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td id="CADCHF" class="non-empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td id="CADJPY" class="non-empty-cell"></td>
+                </tr>
+                <tr>
+                    <th>AUD</th>
+                    <td class="empty-cell"></td>
+                    <td id="AUDUSD" class="non-empty-cell"></td>
+                    <td id="AUDCHF" class="non-empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td id="AUDCAD" class="non-empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td id="AUDNZD" class="non-empty-cell"></td>
+                    <td id="AUDJPY" class="non-empty-cell"></td>
+                </tr>
+                <tr>
+                    <th>NZD</th>
+                    <td class="empty-cell"></td>
+                    <td id="NZDUSD" class="non-empty-cell"></td>
+                    <td id="NZDCHF" class="non-empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td id="NZDCAD" class="non-empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td id="NZDJPY" class="non-empty-cell"></td>
+                </tr>
+                <tr>
+                    <th>JPY</th>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                    <td class="empty-cell"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="container" id="strength-output">
+          <table>
+            <tr>
+              <td class="medium-text">EUR :</td>
+              <td class="medium-text" id="eur-txt">0</td>
+            </tr>
+            <tr>
+              <td class="medium-text">USD :</td>
+              <td class="medium-text" id="usd-txt">0</td>
+            </tr>
+            <tr>
+              <td class="medium-text">CHF :</td>
+              <td class="medium-text" id="chf-txt">0</td>
+            </tr>
+            <tr>
+              <td class="medium-text">GBP :</td>
+              <td class="medium-text" id="gbp-txt">0</td>
+            </tr>
+            <tr>
+              <td class="medium-text">CAD :</td>
+              <td class="medium-text" id="cad-txt">0</td>
+            </tr>
+            <tr>
+              <td class="medium-text">AUD :</td>
+              <td class="medium-text" id="aud-txt">0</td>
+            </tr>
+            <tr>
+              <td class="medium-text">NZD :</td>
+              <td class="medium-text" id="nzd-txt">0</td>
+            </tr>
+            <tr>
+              <td class="medium-text">JPY :</td>
+              <td class="medium-text" id="jpy-txt">0</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="container" id="library-c">
+        <div class="row">
+          <div class="left-menu">
+            <div class="left-menu-button" id="180-pc-button">180 PC</div>
+            <div class="left-menu-button" id="20-bounce-button">20 Bounce</div>
+            <div class="left-menu-button" id="power-pivot-button">Power Pivot</div>
+            <div class="left-menu-button" id="ema-crossover-button">Ema Crossover</div>
+          </div>
+          <div class="recipe" id="180-pc-recipe">
+            <h1 class="recipe-title">180 PHASE CHANGER</h1>
+            <li>D1 / H4 timeframe</li>
+            <li>2 cycles</li>
+            <li>8-20 EMA in order</li>
+            <li>current bar crosses 8 EMA</li>
+            <li>ringed-high/ringed-low formation</li>
+            <li>Entry: High/Low of current bar</li>
+            <li>SL: High/Low of current bar plus spread</li>
+            <li>TP: 1:1 ratio</li>
+          </div>
+          <div class="recipe" id="20-bounce-recipe">
+          </div>
+          <div class="recipe" id="power-pivot-recipe">
+          </div>
+          <div class="recipe" id="ema-crossover-recipe">
+            <h1 class="recipe-title">EMA CROSSOVER</h1>
+            <li>D1: 2 green candles</li>
+            <li>D1: 2 cycles</li>
+            <li>D1: Phase 1</li>
+            <li>H1: 8-20 EMA crossover</li>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="CRIPTO-tab">
+      <div class="tab-button" id="CRIPTO-tab-button">CRIPTO</div>
+    </div>
+  </body>
 </html>
