@@ -32,7 +32,6 @@ li {
   color:#FAEBD7;
   list-style: none;
   cursor: pointer;
-
 }
 .tab-button{
   width:100%;
@@ -44,12 +43,6 @@ li {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-#CRIPTO-tab{
-  display:none;
-}
-#FX-tab{
-  display:block;
 }
 .medium-text{
     /*color:#ddd;*/
