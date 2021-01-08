@@ -32,6 +32,35 @@ b4.addEventListener("click", () => {
   r4.style.display = "block";
 });
 /* ------------------------------------------------------------------------- */
+(function(){
+  
+  var list = document.querySelector('#list'),
+      form = document.querySelector('form'),
+      item = document.querySelector('#item');
+  
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    list.innerHTML += '<li>' + item.value + '</li>';
+    store();
+    item.value = "";
+  },false);
+  
+  function store() {
+    window.localStorage.myitems = list.innerHTML;
+  }
+  
+  function getValues() {
+    var storedValues = window.localStorage.myitems;
+    if(!storedValues) {
+      list.innerHTML = '<li>Sample Note (delete me)</li>';
+    }
+    else {
+      list.innerHTML = storedValues;
+    }
+  }
+  getValues();
+})();
+/* ------------------------------------------------------------------------- */
 
 /* Create a "close" button and append it to each list item */
 var myNodelist = document.getElementsByTagName("LI");
@@ -91,10 +120,10 @@ function newElement() {
 
 /* ------------------------------------------------------------------------- */
 
-loadData();
+updateClocks();
 
 function addZero (time) {return time < 10 ? (`0${time}`) : time;}
-function loadData(){
+function updateClocks(){
     const date = new Date();
     let newYorkTimeEl = document.getElementById("new-york");
     let londonTimeEl = document.getElementById("london");
@@ -111,15 +140,23 @@ function loadData(){
     /* Display timezones not between 9-5 in red */
     if (((h-5)%24)<9 || ((h-5)%24)>=17) {
         newYorkTimeEl.style.color = 'red';
+    }else{
+        newYorkTimeEl.style.color = 'gray';
     }
     if (h<9 || h>17) {
         londonTimeEl.style.color = 'red';
+    }else{
+        londonTimeEl.style.color = 'gray';
     }
     if (((h+9)%24)<9 || ((h+9)%24)>17) {
         tokyoTimeEl.style.color = 'red';
+    }else{
+        tokyoTimeEl.style.color = 'gray';
     }
     if (((h+11)%24)<9 || ((h+11)%24)>17) {
         sydneyTimeEl.style.color = 'red';
+    }else{
+        sydneyTimeEl.style.color = 'gray';
     }
 
     /* Display seconds in bottom-right corner */
@@ -127,7 +164,7 @@ function loadData(){
     sec.innerHTML = s;
 }
 
-setInterval(loadData, 1000);
+setInterval(updateClocks, 1000);
 
 /* ------------------------------------------------------------------------- */
 

@@ -37,20 +37,18 @@ li {
   width:100%;
   text-align:right;
   font-size: 30px;
-  margin:auto;
   cursor: pointer;
+  padding-right:10px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 .medium-text{
-    /*color:#ddd;*/
     color:gray;
     font-size: 25px;
 }
 #seconds{
-    /* float:bottom; */
     padding-top:100px;
     min-width:50px;
 }
@@ -246,7 +244,10 @@ th, td {
 th {
   color:#7BDAC6;
 }
-#strength-analysis-title{
+.align-right{
+  text-align:right;
+}
+.h1-title{
   text-align:left;
   font-size:48px;
   margin-bottom:2rem;

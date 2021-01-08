@@ -40,21 +40,19 @@
         <a href="https://www.forexfactory.com/calendar" target="_blank" id="high-impact">Next High Impact News</a>
       </div>
       <div class="container" id="notes-c">
-        <div id="myDIV" class="header">
-          <h1>Watchlist</h1>
-          <input type="text" id="notes-input" placeholder="EURUSD H4-- in Phase 2">
-          <span onclick="newElement()" class="addBtn">Add</span>
-        </div>
-        <ul id="notes-ul">
-        </ul>
-      </div>        
+        <h1 class="h1-title">Watchlist</h1>
+        <form  action="#" autocomplete="off">
+          <input type="text" name="item" id="item" placeholder="Add New" />
+        </form>  
+        <ul id="list"></ul>
+      </div>
       <div class="container" id="strength-c">
-        <h1 id="strength-analysis-title">Strength Analysis</h1>
+        <h1 class="h1-title">Strength Analysis</h1>
         <div class="container" id="strength-input">
             <!-- 8x8 table of pairs -->
             <table id="strength-table">
                 <tr>
-                    <th>-</th>
+                    <th>/</th>
                     <th>EUR</th>
                     <th>USD</th>
                     <th>CHF</th>
@@ -70,7 +68,7 @@
                     <td id="EURUSD" class="non-empty-cell"></td>
                     <td id="EURCHF" class="non-empty-cell"></td>
                     <td id="EURGBP" class="non-empty-cell"></td>
-                    <td id="EURCAD" class="non-empty-cell"></td>
+                    <td id="EURCAD" class="non-empty-cell">EURCAD</td>
                     <td id="EURAUD" class="non-empty-cell"></td>
                     <td id="EURNZD" class="non-empty-cell"></td>
                     <td id="EURJPY" class="non-empty-cell"></td>
@@ -224,11 +222,33 @@
         </div>
       </div>
     </div>
+
+
+
+
     <div id="CRIPTO-tab">
       <div class="tab-button" id="CRIPTO-tab-button">CRIPTO</div>
-      <div class="container">
-        
+      <div class="container" id="execution-c">
+        <h1>Calculator / Execution terminal</h1>
+        <table>
+            <tr>
+              <td class="medium-text align-right">Entry: </td>
+              <td class="medium-text align-right">0</td>
+            </tr>
+            <tr>
+              <td class="medium-text align-right">SL: </td>
+              <td class="medium-text align-right">0</td>
+            </tr>
+            <tr>
+              <td class="medium-text align-right">Risk ($): </td>
+              <td class="medium-text align-right">0</td>
+            </tr>
+          </table>
       </div>
+      <div class="container" id="current-holdings-c">
+        <h1>Current Holdings</h1>
+      </div>
+
     </div>
   </body>
 </html>
