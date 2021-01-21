@@ -18,22 +18,16 @@ cripto_tab_button.addEventListener("click", () => {
 });
 
 
-var burl = "https://api.binance.com";
-var query = "/api/v1/time";
-query = "/api/v3/account";
-var dataQueryString = 'recvWindow=20000&timestamp=' + Date.now();
-var keys = {
-    'akey':'FMa8fA2Dr7bnToO3hUeyP8cuQHKxTPN8piBkmyDMX48Fqoxl0hQ858DHhGjO2kfU',
-    'skey':'udXa9NOKQG9emUefEuLcDYdLgw6sd4CnJK3C9tvMcWtVWKh4vyRjeBAdgZLgfMO5'
-};
-var signature = 
-
-var url = burl+query;
-
-var request = new XMLHttpRequest();
-
-request.open("GET",url,true);
-request.onload = function(){
-    console.log(request.responseText);
+function multiplyBy()
+{
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+        document.getElementById("result").innerHTML = num1 * num2;
 }
-request.send();
+
+function divideBy() 
+{ 
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+document.getElementById("result").innerHTML = num1 / num2;
+}

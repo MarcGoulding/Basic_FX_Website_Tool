@@ -6,6 +6,7 @@
             content="width=device-width, initial-scale=1">
       <title>FX Hub</title>
       <link rel="stylesheet" href="style.css"/>
+      <script type="text/javascript" src="crypto-js.js"></script>
       <script src="./script_fx.js" defer></script>
       <script src="./script_cripto.js" defer></script>
   </head>
@@ -68,7 +69,7 @@
                     <td id="EURUSD" class="non-empty-cell"></td>
                     <td id="EURCHF" class="non-empty-cell"></td>
                     <td id="EURGBP" class="non-empty-cell"></td>
-                    <td id="EURCAD" class="non-empty-cell">EURCAD</td>
+                    <td id="EURCAD" class="non-empty-cell"></td>
                     <td id="EURAUD" class="non-empty-cell"></td>
                     <td id="EURNZD" class="non-empty-cell"></td>
                     <td id="EURJPY" class="non-empty-cell"></td>
@@ -230,25 +231,33 @@
       <div class="tab-button" id="CRIPTO-tab-button">CRIPTO</div>
       <div class="container" id="execution-c">
         <h1>Calculator / Execution terminal</h1>
+        <form>
+          1st Number : <input type="text" id="firstNumber" /><br>
+          2nd Number: <input type="text" id="secondNumber" /><br>
+          <input type="button" onClick="multiplyBy()" Value="Multiply" />
+          <input type="button" onClick="divideBy()" Value="Divide" />
+        </form>
+        <p>The Result is : <br>
+        <span id = "result"></span>
+        </p>
         <table>
-            <tr>
-              <td class="medium-text align-right">Entry: </td>
-              <td class="medium-text align-right">0</td>
-            </tr>
-            <tr>
-              <td class="medium-text align-right">SL: </td>
-              <td class="medium-text align-right">0</td>
-            </tr>
-            <tr>
-              <td class="medium-text align-right">Risk ($): </td>
-              <td class="medium-text align-right">0</td>
-            </tr>
-          </table>
+          <tr>
+            <td class="medium-text align-right">Entry: </td>
+            <td class="medium-text align-right">0</td>
+          </tr>
+          <tr>
+            <td class="medium-text align-right">SL: </td>
+            <td class="medium-text align-right">0</td>
+          </tr>
+          <tr>
+            <td class="medium-text align-right">Risk ($): </td>
+            <td class="medium-text align-right">0</td>
+          </tr>
+        </table>
       </div>
       <div class="container" id="current-holdings-c">
         <h1>Current Holdings</h1>
       </div>
-
     </div>
   </body>
 </html>
