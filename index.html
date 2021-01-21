@@ -35,8 +35,11 @@
         </div>
       </div>
       <div class="container" id="calculator-c">
-        <h1>(( CALCULATOR DIV ))</h1>
+        <h1>(( CALCULATOR ))</h1>
+        <a href="https://www.babypips.com/tools/position-size-calculator" target="_blank">Link to BabyPips Lot size Calculator</a> 
       </div>
+      <!-- HOW TO CALCULATE LOTS
+        https://www.babypips.com/learn/forex/calculating-position-sizes -->
       <div class="container" id="news-c">
         <a href="https://www.forexfactory.com/calendar" target="_blank" id="high-impact">Next High Impact News</a>
       </div>
@@ -202,8 +205,8 @@
             <h1 class="recipe-title">180 PHASE CHANGER</h1>
             <li>D1 / H4 timeframe</li>
             <li>2 cycles</li>
-            <li>8-20 EMA in order</li>
-            <li>current bar crosses 8 EMA</li>
+            <li><span style="color:yellow">8</span>-<span style="color:blue">20</span> EMA in order</li>
+            <li>current bar crosses <span style="color:yellow">8</span> EMA</li>
             <li>ringed-high/ringed-low formation</li>
             <li>Entry: High/Low of current bar</li>
             <li>SL: High/Low of current bar plus spread</li>
@@ -229,44 +232,40 @@
 
     <div id="CRIPTO-tab">
       <div class="tab-button" id="CRIPTO-tab-button">CRIPTO</div>
-      <div class="container" id="execution-c">
-        <h1>Calculator / Execution terminal</h1>
-        <form>
-          <table>
-            <tr>
-              <td>1st Number :</td>
-              <td><input type="text" id="firstNumber" /></td>
-            </tr>
-            <tr>
-              <td>2nd Number:</td>
-              <td><input type="text" id="secondNumber" /></td>
-          <tr>
-            <td>
-          <input type="button" onClick="multiplyBy()" Value="Multiply" /></td><td>
-          <input type="button" onClick="divideBy()" Value="Divide" /></td>
-          </tr>
-        </form>
-          </table>
-        <p>The Result is : <br>
-        <span id = "result"></span>
-        </p>
+      <div class="container">
+        <h1>Calculator (NOT WORKING)</h1>
+        <div id="cripto-calculator-c">
         <table>
           <tr>
-            <td class="medium-text align-right">Entry: </td>
-            <td class="medium-text align-right">0</td>
-          </tr>
-          <tr>
-            <td class="medium-text align-right">SL: </td>
-            <td class="medium-text align-right">0</td>
-          </tr>
-          <tr>
-            <td class="medium-text align-right">Risk ($): </td>
-            <td class="medium-text align-right">0</td>
+            <td>
+              <form>
+                <table>
+                  <tr>
+                    <td class="medium-text align-right">Entry :</td>
+                    <td><input type="text" id="firstNumber"/></td>
+                  </tr>
+                  <tr>
+                    <td class="medium-text align-right">SL :</td>
+                    <td><input type="text" id="secondNumber" /></td>
+                  <tr>
+                    <td></td><td>
+                    <input type="button" onClick="cripto_calculate()" Value="=" class="large-text" /></td>
+                  </tr>
+                </table>
+              </form>
+            </td>
+            <td>
+              <p class="medium-text margin-left">Position Size: 
+              <span id="cripto-calculator-result" class="large-text"></span>
+              </p>
+            </td>
           </tr>
         </table>
       </div>
+      </div>
       <div class="container" id="current-holdings-c">
         <h1>Current Holdings</h1>
+        <h1>Trade execution terminal<br>(merge with calculator)</h1>
       </div>
     </div>
   </body>

@@ -18,11 +18,11 @@ cripto_tab_button.addEventListener("click", () => {
 });
 
 
-function multiplyBy()
+function cripto_calculate()
 {
         num1 = document.getElementById("firstNumber").value;
         num2 = document.getElementById("secondNumber").value;
-        document.getElementById("result").innerHTML = num1 * num2;
+        document.getElementById("cripto-calculator-result").innerHTML = num1 * num2;
 }
 
 function divideBy() 
