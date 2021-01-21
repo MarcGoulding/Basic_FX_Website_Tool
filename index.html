@@ -232,11 +232,21 @@
       <div class="container" id="execution-c">
         <h1>Calculator / Execution terminal</h1>
         <form>
-          1st Number : <input type="text" id="firstNumber" /><br>
-          2nd Number: <input type="text" id="secondNumber" /><br>
-          <input type="button" onClick="multiplyBy()" Value="Multiply" />
-          <input type="button" onClick="divideBy()" Value="Divide" />
+          <table>
+            <tr>
+              <td>1st Number :</td>
+              <td><input type="text" id="firstNumber" /></td>
+            </tr>
+            <tr>
+              <td>2nd Number:</td>
+              <td><input type="text" id="secondNumber" /></td>
+          <tr>
+            <td>
+          <input type="button" onClick="multiplyBy()" Value="Multiply" /></td><td>
+          <input type="button" onClick="divideBy()" Value="Divide" /></td>
+          </tr>
         </form>
+          </table>
         <p>The Result is : <br>
         <span id = "result"></span>
         </p>
