@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRIPTO - RISK CALCULATOR TOOL</title>
+    <link rel="stylesheet" href="style.css"/>
+
+    <script src="./script_cripto.js" defer></script>
+</head>
+<body>
+    <div class="align-center"><img src="res/cripto.jpeg" alt="CRIPTO"></div>
+
+    <div id="CRIPTO-tab">
+        <div class="container">
+            <div id="cripto-calculator-c">
+          <table>
+            <tr>
+              <td>
+                <form>
+                  <table>
+                    <tr>
+                        <td class="medium-text align-right">Balance :</td>
+                        <td><input type="text" id="balanceNumber" /></td>
+                    </tr>
+                    <tr>
+                        <td class="medium-text align-right">Leverage :</td>
+                        <td><input type="text" id="leverageNumber" /></td>
+                    </tr>
+                    <tr>
+                        <td class="medium-text align-right">Risk :</td>
+                        <td><input type="text" id="riskNumber" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div class="container medium-text">
+                            <table class="table-center">
+                                <tr>
+                                    <td id="buy-text">BUY</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input id="buy-sell-toggle" type="checkbox" onclick="toggleBuySellSlider()">
+                                            <span class="slider" id="toggle-slider"></span>
+                                        </label>
+                                    </td>
+                                    <td id="sell-text">SELL</td>
+                                </tr>
+                            </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="medium-text align-right">Entry :</td>
+                        <td><input type="text" id="entryNumber"/></td>
+                    </tr>
+                    <tr>
+                        <td class="medium-text align-right">SL :</td>
+                        <td><input type="text" id="stoplossNumber" /></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td><input type="button" onClick="criptoCalculate()" Value="=" class="large-text" /></td>
+                    </tr>
+                  </table>
+                </form>
+              </td>
+              <td>
+                <p class="medium-text margin-left">Required Margin:  
+                  <span id="cripto-calculator-margin-result" class="medium-text" style="color:#7BDAC6;"></span>
+                </p>
+                <p class="medium-text margin-left">Position Size:  
+                  <span id="cripto-calculator-result" class="large-text" style="color:#7BDAC6;"></span>
+                </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        </div>
+        <div class="align-center"><img src="res/cripto.jpeg" alt="CRIPTO"></div>
+        <div class="container" id="current-holdings-c">
+          <h1>Current Holdings</h1>
+          <h1>Trade execution terminal<br>(merge with calculator)</h1>
+        </div>
+      </div>
+    
+</body>
+</html>
